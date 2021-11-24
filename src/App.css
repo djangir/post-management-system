@@ -1,0 +1,9 @@
+.border-right{
+    min-height: 70vh;
+} 
+.bottomFix input, .bottomFix button {
+    border:none;
+    outline: none;  
+    border-radius: 5px;
+}
+ 
