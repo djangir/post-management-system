@@ -4,6 +4,7 @@ import { addValue, removeValue, pendingData, removePendingData, completeData, re
 
 function PendingData(props) {
     const dispatch = useDispatch();
+    const [updateData, setUpdateData] = React.useState(props.text);
 
     function removeFunction1() {
         if (props.removeFunction === 'removePendingData') {
@@ -48,7 +49,11 @@ function PendingData(props) {
 
     return (
         <div className='h4 m-2 my-3 p-2'>
-            <p>{ props.text }</p>
+
+            <div className='row'>
+                <p className='col-10' style={ { textAlign: 'justify', wordBreak: 'break-all' } }> { props.text }</p>
+                <h3 className='col-2 text-center h1' style={ { cursor: 'pointer', maxHeight: '65px', maxWidth: '75px' } }> &#9998; </h3>
+            </div>
 
             <div>
                 <span className='btn btn-outline-danger btn-warning mx-2 rounded-circle' onClick={ removeFunction1 }>&#10148;</span>

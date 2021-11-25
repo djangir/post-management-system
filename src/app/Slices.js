@@ -6,6 +6,8 @@ export const data = {
     completeData: ['value 7', 'value 8', 'value 9']
 };
 
+// index , number of item, Value
+
 export const slice = createSlice({
     name: 'updateData',
     data,
