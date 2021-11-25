@@ -1,5 +1,6 @@
 .border-right{
-    min-height: 70vh;
+    height: 85vh;
+    overflow: auto;
 } 
 .bottomFix input, .bottomFix button {
     border:none;

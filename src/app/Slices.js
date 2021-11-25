@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const data = {
-    value: ['value1'],
-    pendingData: ['value2'],
-    completeData: ['value3']
+    value: ['value 1', 'value 2', 'value 3'],
+    pendingData: ['value 4', 'value 5', 'value 6'],
+    completeData: ['value 7', 'value 8', 'value 9']
 };
 
 export const slice = createSlice({
