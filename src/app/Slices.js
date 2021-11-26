@@ -7,7 +7,6 @@ export const data = {
 };
 
 // index , number of item, Value
-
 export const slice = createSlice({
     name: 'updateData',
     data,
@@ -18,6 +17,9 @@ export const slice = createSlice({
         removeValue(state, action) {
             state.value.splice(action.payload, 1);
         },
+        updateValue(state, action) {
+            state.value.splice(action.payload[0], 1, action.payload[1]);
+        },
 
         // pending data
         pendingData(state, action) {
@@ -25,6 +27,9 @@ export const slice = createSlice({
         },
         removePendingData(state, action) {
             state.pendingData.splice(action.payload, 1);
+        },
+        updatePendingData(state, action) {
+            state.pendingData.splice(action.payload[0], 1, action.payload[1]);
         },
 
         // Complete Data
@@ -34,8 +39,30 @@ export const slice = createSlice({
         removeCompleteData(state, action) {
             state.completeData.splice(action.payload, 1);
         }
+        ,
+        updateCompleteData(state, action) {
+            state.completeData.splice(action.payload[0], 1, action.payload[1]);
+        },
+
+        // Delete Data Functions
+        deleteAllData(state, action) {
+            state.value = [];
+            state.pendingData = [];
+            state.completeData = [];
+        },
+
+        // delete 1 by 1
+        deleteValue(state, action) {
+            state.value = [];
+        },
+        deletePendingData(state, action) {
+            state.pendingData = [];
+        },
+        deleteCompleteData(state, action) {
+            state.completeData = [];
+        },
     }
 });
 
 export default slice.reducer;
-export const { addValue, removeValue, pendingData, removePendingData, completeData, removeCompleteData } = slice.actions;
+export const { addValue, removeValue, pendingData, removePendingData, completeData, removeCompleteData, updateCompleteData, updatePendingData, updateValue, deleteAllData, deleteValue, deletePendingData, deleteCompleteData } = slice.actions;
