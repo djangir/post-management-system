@@ -14,8 +14,10 @@
 
 <h2> Shortcut </h2> 
 
-2. Plus (+) for open Form
+1. press Delete Key For Delete All Data
 
-3. Enter For Submit Data
+2. press Plus (+) key for open Form
 
-4. Esc for cancel
+3. press Enter key For Submit Data
+
+4. press Esc key for cancel

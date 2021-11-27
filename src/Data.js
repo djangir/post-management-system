@@ -57,18 +57,18 @@ function PendingData(props) {
             dispatch(updateValue([props.number, updateData]));
         }
 
-        setupdateInputClass('d-none')
-        setParagraphClass('d-block')
-        setPencilClass('contents')
+        setupdateInputClass('d-none');
+        setParagraphClass('d-block');
+        setPencilClass('contents');
     }
 
     function keyEvents(e) {
         if (e.keyCode === 27) {
-            setupdateInputClass('d-none')
-            setParagraphClass('d-block')
-            setPencilClass('contents')
-        }else if (e.keyCode === 13) {
-            saveData()
+            setupdateInputClass('d-none');
+            setParagraphClass('d-block');
+            setPencilClass('contents');
+        } else if (e.keyCode === 13) {
+            saveData();
         }
     }
 
@@ -76,38 +76,38 @@ function PendingData(props) {
         <div className='h4 m-2 my-3 p-2'>
             <div className='row'>
                 <div className='col-10'>
-                    <div className={paragraphClass}>
-                        <p style={{ textAlign: 'justify', wordBreak: 'break-all' }}> {props.text}</p>
+                    <div className={ paragraphClass }>
+                        <p style={ { textAlign: 'justify', wordBreak: 'break-all' } }> { props.text }</p>
                     </div>
 
-                    <div className={updateInputClass}>
+                    <div className={ updateInputClass }>
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" onKeyDown={keyEvents}
-                                placeholder={updateData} value={updateData} onChange={(e) => setUpdateData(e.target.value)} />
-                            <span className="input-group-text" style={{ cursor: 'pointer' }} onClick={saveData} > Save </span>
+                            <input type="text" className="form-control" onKeyDown={ keyEvents }
+                                placeholder={ updateData } value={ updateData } onChange={ (e) => setUpdateData(e.target.value) } />
+                            <span className="input-group-text" style={ { cursor: 'pointer' } } onClick={ saveData } > Save </span>
                         </div>
                     </div>
                 </div>
 
-                {(props.completeRemove) ? null :
-                    <div style={{ display: pencilClass }}>
-                        <h3 className='col-2 text-center h1' style={{ cursor: 'pointer', maxHeight: '65px', maxWidth: '75px' }} onClick={() => {
-                            setupdateInputClass('d-block')
-                            setParagraphClass('d-none')
-                            setPencilClass('none')
+                { (props.completeRemove) ? null :
+                    <div style={ { display: pencilClass } }>
+                        <h3 className='col-2 text-center h1' style={ { cursor: 'pointer', maxHeight: '65px', maxWidth: '75px' } } onClick={ () => {
+                            setupdateInputClass('d-block');
+                            setParagraphClass('d-none');
+                            setPencilClass('none');
 
-                        }} > &#9998; </h3>
+                        } } > &#9998; </h3>
                     </div>
                 }
             </div>
 
             <div>
-                <span className='btn btn-outline-danger btn-warning mx-2 rounded-circle' onClick={removeFunction1}>&#10148;</span>
-                <span className='btn btn-outline-warning btn-success mx-2 rounded-circle' onClick={removePendingData1}>&#10003;</span>
-                <span className='btn btn-outline-secondary btn-light  mx-2 rounded-circle' onClick={removeCompleteData1}>&#8644;</span>
+                <span className='btn btn-outline-danger btn-warning mx-2 rounded-circle' onClick={ removeFunction1 }>&#10148;</span>
+                <span className='btn btn-outline-warning btn-success mx-2 rounded-circle' onClick={ removePendingData1 }>&#10003;</span>
+                <span className='btn btn-outline-secondary btn-light  mx-2 rounded-circle' onClick={ removeCompleteData1 }>&#8644;</span>
 
-                {(props.completeRemove) ?
-                    <span className='btn btn-warning btn-outline-danger ms-3 rounded-circle' onClick={() => dispatch(removeCompleteData(props.number))}> X </span> : null
+                { (props.completeRemove) ?
+                    <span className='btn btn-warning btn-outline-danger ms-3 rounded-circle' onClick={ () => dispatch(removeCompleteData(props.number)) }> X </span> : null
                 }
 
             </div>
