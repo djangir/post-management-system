@@ -56,17 +56,19 @@ function PendingData(props) {
         } else {
             dispatch(updateValue([props.number, updateData]));
         }
-        
+
         setupdateInputClass('d-none')
         setParagraphClass('d-block')
         setPencilClass('contents')
     }
 
-    function escapeUpdating(e) {
+    function keyEvents(e) {
         if (e.keyCode === 27) {
             setupdateInputClass('d-none')
             setParagraphClass('d-block')
             setPencilClass('contents')
+        }else if (e.keyCode === 13) {
+            saveData()
         }
     }
 
@@ -80,7 +82,7 @@ function PendingData(props) {
 
                     <div className={updateInputClass}>
                         <div className="input-group mb-3">
-                            <input type="text" className="form-control" onKeyDown={escapeUpdating}
+                            <input type="text" className="form-control" onKeyDown={keyEvents}
                                 placeholder={updateData} value={updateData} onChange={(e) => setUpdateData(e.target.value)} />
                             <span className="input-group-text" style={{ cursor: 'pointer' }} onClick={saveData} > Save </span>
                         </div>

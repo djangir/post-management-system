@@ -1,7 +1,6 @@
 #Shortcut
 
-<h1> Shortcut </h1>
-_____________________________________
+<h1> Shortcut </h1> 
 
 2. Plus (+) for open Form
 
