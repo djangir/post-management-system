@@ -67,7 +67,16 @@ function App() {
   // Main Function(App) Return
   return (
     <>
-      <h1 className='text-center m-3' > PMS ! </h1>
+      <h1 className='text-center m-3' >
+        <span className='text-danger'> P </span>
+        <span className='text-warning'> M </span>
+        <span className='text-success'> S </span>
+      </h1>
+      <div className='text-center h5' style={{ marginTop: -25 }}>
+        <span className='text-danger text-decoration-underline'> post </span>
+        <span className='text-warning text-decoration-underline'> management </span>
+        <span className='text-success text-decoration-underline'> system </span>
+      </div>
 
       <div className='text-end me-3'>
         <button className={btnDisplay} onClick={() => {
